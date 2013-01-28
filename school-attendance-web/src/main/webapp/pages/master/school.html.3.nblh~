@@ -7,8 +7,7 @@
                 <input type="text" id="schoolyear" 
                        name="schoolyear" 
                        placeholder="School Year" 
-                       ng-model="currentSchool.schoolyear"
-                       required>
+                       ng-model="currentSchool.schoolyear">
                 <span ng-show="formEdit.schoolyear.$error.required" class="help-inline">Required</span>
             </div>
             <div class="form-actions">

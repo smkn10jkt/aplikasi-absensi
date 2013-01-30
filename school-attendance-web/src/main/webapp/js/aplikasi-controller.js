@@ -389,28 +389,27 @@ angular.module('belajar.controller',['belajar.service'])
             }
         }
     }])
-    .controller('UserController', ['$scope', 'UserService', 'RoleService', function($scope, UserService, RoleService){
-        $scope.users = UserService.query();
-        $scope.roles = RoleService.query();
+    .controller('SchoolController', ['$scope', 'SchoolService', function($scope, SchoolService){
+        $scope.schools = SchoolService.query();
         $scope.edit = function(x){
             if(x.id == null){
                 return; 
             }
-            $scope.currentUser = UserService.get({id: x.id}, function(data){
+            $scope.currentSchool = SchoolService.get({id: x.id}, function(data){
                 $scope.original = angular.copy(data);
             });
         };
         $scope.baru = function(){
-            $scope.currentUser = null;
+            $scope.currentSchool = null;
             $scope.original = null;
         }
         $scope.simpan = function(){
-            if($scope.currentUser.active == null){
-                $scope.currentUser.active = false;
+            if($scope.currentSchool.active == null){
+                $scope.currentSchool.active = false;
             }
-            UserService.save($scope.currentUser)
+            SchoolService.save($scope.currentSchool)
             .success(function(){
-                $scope.users = UserService.query();
+                $scope.schools = SchoolService.query();
                 $scope.baru();
             });
         }
@@ -418,24 +417,12 @@ angular.module('belajar.controller',['belajar.service'])
             if(x.id == null){
                 return;
             }
-            UserService.remove(x).success(function(){
-                $scope.users = UserService.query();
+            SchoolService.remove(x).success(function(){
+                $scope.schools = SchoolService.query();
             });
         }
         $scope.isClean = function(){
-            return angular.equals($scope.original, $scope.currentUser);
-        }
-        $scope.isUsernameAvailable = function(value){
-            if($scope.currentUser != null && $scope.currentUser.id != null){
-                return true;
-            }
-            for(var i = 0; i < $scope.users.length; i++){
-                var u = $scope.users[i];
-                if(u.username === value){
-                    return false;
-                }
-            }
-            return true;
+            return angular.equals($scope.original, $scope.currentSchool);
         }
     }])
 ;

@@ -80,7 +80,7 @@ angular.module('belajar.service', ['ngResource'])
         var service = {
             role: $resource('role/:id'),
             get: function(param, callback){ return this.role.get(param, callback) }, 
-            query: function(p, callback){ return this.school.queryPage({"page.page": p, "page.size": 10}, callback) },
+            query: function(){ return this.role.query() },
             save: function(obj){
                 if(obj.id == null){
                     return $http.post('role', obj);
@@ -105,9 +105,7 @@ angular.module('belajar.service', ['ngResource'])
     }])
     .factory('SchoolService', ['$resource', '$http', function($resource, $http){
         var service = {
-            schools: $resource('master/school/:id', {}, {
-                queryPage: {method:'GET', isArray: false}
-            }),
+            school: $resource('master/school/:id'),
             get: function(param, callback){ return this.school.get(param, callback) }, 
             query: function(){ return this.school.query() },
             save: function(obj){

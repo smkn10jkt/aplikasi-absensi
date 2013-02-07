@@ -391,6 +391,7 @@ angular.module('belajar.controller',['belajar.service'])
     }])
     .controller('SchoolController', ['$scope', 'SchoolService', function($scope, SchoolService){
         $scope.schools = SchoolService.query();
+        $scope.schoolyears = SchoolyearService.query();
         $scope.edit = function(x){
             if(x.id == null){
                 return; 

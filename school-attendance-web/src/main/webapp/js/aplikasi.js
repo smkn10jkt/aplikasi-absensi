@@ -20,6 +20,7 @@ angular.module('belajar', ['ui', 'belajar.controller'])
             .when('/report/teacher', {templateUrl: 'pages/report/teacher.html'})
             .when('/report/employee', {templateUrl: 'pages/report/employee.html'})
             .when('/report/recap', {templateUrl: 'pages/report/recap.html'})
+            .when('/setting/ip', {templateUrl: 'pages/setting/ip.html'})
             .when('/about', {templateUrl: 'pages/about.html', controller: 'AboutController'})
             .otherwise({templateUrl: 'pages/404.html'});
     }])

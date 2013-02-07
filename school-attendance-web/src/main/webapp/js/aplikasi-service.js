@@ -105,7 +105,7 @@ angular.module('belajar.service', ['ngResource'])
     }])
     .factory('SchoolService', ['$resource', '$http', function($resource, $http){
         var service = {
-            schools: $resource('master/school/:id', {}, {
+            school: $resource('master/school/:id', {}, {
                 queryPage: {method:'GET', isArray: false}
             }),
             get: function(param, callback){ return this.school.get(param, callback) }, 
@@ -120,6 +120,29 @@ angular.module('belajar.service', ['ngResource'])
             remove: function(obj){
                 if(obj.id != null){
                     return $http.delete('master/school/'+obj.id);
+                }
+            }
+        };
+            
+        return service;
+    }])
+.factory('SchoolyearService', ['$resource', '$http', function($resource, $http){
+        var service = {
+            schoolyear: $resource('report/student/:id', {}, {
+                queryPage: {method:'GET', isArray: false}
+            }),
+            get: function(param, callback){ return this.schoolyear.get(param, callback) }, 
+            query: function(){ return this.schoolyear.query() },
+            save: function(obj){
+                if(obj.id == null){
+                    return $http.post('report/student/', obj);
+                } else {
+                    return $http.put('report/student/'+obj.id, obj);
+                }
+            }, 
+            remove: function(obj){
+                if(obj.id != null){
+                    return $http.delete('report/student/'+obj.id);
                 }
             }
         };

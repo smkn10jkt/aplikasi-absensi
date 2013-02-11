@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aplikasi Absensi</title>
+        <title>Belajar RESTful</title>
 
         <!-- css orang lain -->
         <link rel="stylesheet" href="css/jquery-ui.min.css">
@@ -27,7 +27,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                    <a class="brand" href="#">Aplikasi Absensi</a>
+                    <a class="brand" href="#">Belajar RESTful</a>
                     <div class="nav-collapse collapse" ng-controller="MenubarController">
                         <ul class="nav">
                             <li class="dropdown">
@@ -59,25 +59,17 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Report <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transaksi <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#/report/student">Student</a></li>
-                                    <li><a href="#/report/teacher">Teacher</a></li>
-                                    <li><a href="#/report/employee">Employee</a></li>
-                                    <li><a href="#/report/recap">Recap</a></li>
+                                    <li><a href="#">Pembelian</a></li>
+                                    <li><a href="#">Penjualan</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Laporan <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#/setting/ip">IP</a></li>
-                                </ul>
-                            </li>
-                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notifications<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#/notifications/sms">Notifikasi SMS</a></li>
-                                    <li><a href="#">Notifikasi Email</a></li>
+                                    <li><a href="#">Rekap Pembelian</a></li>
+                                    <li><a href="#">Rekap Penjualan</a></li>
                                 </ul>
                             </li>
                             <li><a href="#about">About</a></li>

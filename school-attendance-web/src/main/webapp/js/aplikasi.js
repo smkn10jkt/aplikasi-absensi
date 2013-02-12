@@ -10,11 +10,8 @@ angular.module('belajar', ['ui', 'belajar.controller'])
             .when('/system/permission', {templateUrl: 'pages/system/permission.html', controller: 'PermissionController'})
             .when('/system/menu', {templateUrl: 'pages/system/menu.html', controller: 'SystemMenuController'})
             .when('/notifications/sms', {templateUrl: 'pages/notifications/sms.html'})
-<<<<<<< HEAD
-			.when('/notifications/email', {templateUrl: 'pages/notifications/email.html'})
-=======
+            .when('/notifications/email', {templateUrl: 'pages/notifications/email.html'})
             .when('/school/school', {templateUrl: 'pages/school/school.html'})
->>>>>>> cc880550471482b22ebb6d134d97156e71916ca4
             .when('/master/school', {templateUrl: 'pages/master/school.html', controller: 'SchoolController'})
             .when('/master/majors', {templateUrl: 'pages/master/majors.html'})
             .when('/master/grade', {templateUrl: 'pages/master/grade.html'})

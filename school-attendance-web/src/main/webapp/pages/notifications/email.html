@@ -10,7 +10,7 @@
             <tr>
                 <th>Name</th>
                 <th>Class</th>
-                <th>Number</th>
+                <th>Email</th>
                 <th></th>
             </tr>
         </thead>
@@ -18,7 +18,7 @@
             <tr ng-repeat="x in permissions">
                 <td>{{x.name}}</td>
                 <td>{{x.class}}</td>
-                <td>{{x.number}}</td>
+                <td>{{x.email}}</td>
                 <td>
                     <a ng-click="edit(x)"><i class="icon-edit"></i></a>
                     <a ng-click="remove(x)"><i class="icon-remove"></i></a>

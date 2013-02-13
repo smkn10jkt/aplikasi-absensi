@@ -1,13 +1,13 @@
 <div class="row-fluid" >
     <div class="span12 well-large">
-        <h1>Form School Year</h1>
+        <h1>School Year Input</h1>
         <form class="form-horizontal" name="formEdit">
             <div class="control-group" ng-class="{error: formEdit.schoolyear.$invalid}">
                 <label class="control-label" for="label">School Year : &nbsp;</label>
                 <input type="text" id="schoolyear" 
                        name="schoolyear" 
                        placeholder="School Year" 
-                       ng-model="currentSchool.schoolyear"
+                       ng-model="currentPermission.value"
                        required>
                 <span ng-show="formEdit.schoolyear.$error.required" class="help-inline">Required</span>
             </div>

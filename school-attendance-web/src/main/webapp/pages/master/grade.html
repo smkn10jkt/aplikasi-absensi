@@ -15,14 +15,14 @@
                 <tr>
                     
                     <th>Grade Name</th >
-					<th>Majors</th>
+		    <th>Majors</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="x in schools.content">
                     <td>{{x.gradename}}</td>
-					<td>{{x.majors}}</td>
+		    <td>{{x.majors}}</td>
                     <td>{{x.action}}</td>
                         <a ng-click="edit(x)"><i class="icon-edit"></i></a>
                         <a ng-click="remove(x)"><i class="icon-remove"></i></a>

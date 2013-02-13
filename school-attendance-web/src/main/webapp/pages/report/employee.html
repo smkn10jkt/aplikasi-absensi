@@ -1,14 +1,27 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<div class="row-fluid" >
+     <div class="span5 well-large">
+        <h1>Top 10 Late</h1>
+        <hr>
+        <table class="table table-striped table-condensed table-bordered">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th >
+                    <th>Grade</th>
+                    <th>Total</th>
+                    <th>Attempt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in employees.content">
+                    <td>{{x.no}}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.grade}}</td>
+                    <td>{{x.total}}</td>
+                    <td>{{x.attempt}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>   
+</div>

@@ -1,5 +1,5 @@
 <div class="span5 well-large">
-    <h1>SMS Notification</h1>
+    <h1>Email Notification</h1>
 
     <a class="btn" ng-click="baru()">
         <i class="icon-plus-sign"></i>Tambah Data
@@ -10,7 +10,7 @@
             <tr>
                 <th>Name</th>
                 <th>Class</th>
-                <th>Number</th>
+                <th>Email</th>
                 <th></th>
             </tr>
         </thead>
@@ -18,7 +18,7 @@
             <tr ng-repeat="x in permissions">
                 <td>{{x.name}}</td>
                 <td>{{x.class}}</td>
-                <td>{{x.number}}</td>
+                <td>{{x.email}}</td>
                 <td>
                     <a ng-click="edit(x)"><i class="icon-edit"></i></a>
                     <a ng-click="remove(x)"><i class="icon-remove"></i></a>
@@ -30,25 +30,21 @@
 </div>
 
 <div class="span5 well-large">
-    <h1>Form SMS</h1>
+    <h1>Form Email</h1>
     <form class="form-horizontal" name="formEdit">
         <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
             <label class="control-label" for="label">Send To : &nbsp;</label>
             <input type="text" id="label" 
                    name="name" 
-                   placeholder="ex: +6285881052xxx" 
-                   ng-model="currentSms.name"
+                   placeholder="ex: ex@example.com" 
+                   ng-model="currentEmail.name"
                    required>
             <span ng-show="formEdit.label.$error.required" class="help-inline">required</span>
         </div>
         
         <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
-            <label class="control-label" for="label">Messages : &nbsp;</label>
-            <textarea id="label" 
-                   name="name" 
-                   placeholder="Your Messages" 
-                   ng-model="currentSms.name"
-                   required></textarea>
+            <label class="control-label" for="label">Message : &nbsp;</label>
+            <textarea rows="3"> </textarea>
             <span ng-show="formEdit.label.$error.required" class="help-inline">required</span>
         </div>
         

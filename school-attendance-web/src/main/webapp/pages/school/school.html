@@ -1,36 +1,35 @@
 <div class="row">
     <div class="span10 well-large">
-        <h1>Form Scholl</h1>
+        <h1>Form Schooll</h1>
         <form class="form-horizontal" name="formEdit">
             <div class="control-group" ng-class="{error: formEdit.nama.$invalid}">
                 <label class="control-label" for="nama">Name : &nbsp;</label>
-                <input type="text" id="fullname" name="nama" placeholder="Full Name" ng-model="currentUser.nama" required>
+                <input type="text" id="name" name="nama" placeholder="Full Name" ng-model="currentUser.nama" required>
                 <span ng-show="formEdit.nama.$error.required" class="help-inline">Harus diisi</span>
             </div>
-            <div class="control-group" ng-class="{error: formEdit.alamat.$invalid}">
-                <label class="control-label" for="address">Address : &nbsp;</label>
-                <input type="text" id="username" name="address" placeholder="Address" ng-model="currentUser.address" required>
-                <span ng-show="formEdit.adrress.$error.required" class="help-inline">Harus diisi</span>
-                
+             <div class="control-group" ng-class="{error: formEdit.address.$invalid}">
+                <label class="control-label" for="username">Address : &nbsp;</label>
+                <input type="text" id="address" name="address" placeholder="Address" ng-model="currentUser.Address" required ui-validate="{usernameAvailable: isUsernameAvailable}">
+                <span ng-show="formEdit.address.$error.required" class="help-inline">Harus diisi</span>
             </div>
             <div class="control-group" ng-class="{error: formEdit.subdistrict.$invalid}">
                 <label class="control-label" for="subdistrict">Subdistrict : &nbsp;</label>
-                <input type="text" id="password" name="subdistrict" placeholder="Subdistrict" ng-model="currentUser.subdistrict" required>
+                <input type="text" id="subdistrict" name="subdistrict" placeholder="Subdistrict" ng-model="currentUser.subdistrict" required>
                 <span ng-show="formEdit.subdistrict.$error.required" class="help-inline">Harus diisi</span>
             </div>
             <div class="control-group" ng-class="{error: formEdit.phone.$invalid}">
                 <label class="control-label" for="phone">Phone : &nbsp;</label>
-                <input type="text" id="password" name="phone" placeholder="Phone" ng-model="currentUser.phone" required>
+                <input type="text" id="phone" name="phone" placeholder="Phone" ng-model="currentUser.phone" required>
                 <span ng-show="formEdit.phone.$error.required" class="help-inline">Harus diisi</span>
             </div>
             <div class="control-group" ng-class="{error: formEdit.website.$invalid}">
                 <label class="control-label" for="website">Website : &nbsp;</label>
-                <input type="text" id="password" name="website" placeholder="Email" ng-model="currentUser.website" required>
+                <input type="text" id="website" name="website" placeholder="Email" ng-model="currentUser.website" required>
                 <span ng-show="formEdit.website.$error.required" class="help-inline">Harus diisi</span>
             </div>
             <div class="control-group" ng-class="{error: formEdit.email.$invalid}">
                 <label class="control-label" for="email">Email : &nbsp;</label>
-                <input type="text" id="password" name="website" placeholder="Website" ng-model="currentUser.email" required>
+                <input type="text" id="email" name="email" placeholder="Email" ng-model="currentUser.email" required>
                 <span ng-show="formEdit.email.$error.required" class="help-inline">Harus diisi</span>
             </div>
            <!-- <div class="control-group">

@@ -3,6 +3,7 @@ package com.artivisi.school.attendance.service;
 import java.util.List;
 
 import com.artivisi.school.attendance.domain.ApplicationConfig;
+import com.artivisi.school.attendance.domain.Kehadiran;
 import com.artivisi.school.attendance.domain.Menu;
 import com.artivisi.school.attendance.domain.Permission;
 import com.artivisi.school.attendance.domain.Role;

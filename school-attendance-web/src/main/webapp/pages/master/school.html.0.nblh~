@@ -2,8 +2,9 @@
     <div class="span12 well-large">
         <div class="tabbable">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#schoolyearlist" data-toggle="tab"><i class="icon-list"></i>School Year List</a></li>
-                 <li><a href="#forminput" data-toogle="tab"><i class="icon-plus-sign"></i>Create New School Year</a></li>
+                <li class="active"><a href="#schoolyearinput" data-toogle="tab">
+                        <i class="icon-plus-sign"></i>Create New School Year</a></li>
+                        <li><a href="#schoolyearlist" data-toggle="tab"><i class="icon-list"></i>School Year List</a></li>
             </ul>
             <div class="tab-content">
             <div class="tab-pane-active" id="schoolyearlist">
@@ -28,9 +29,11 @@
                 </tr>
             </tbody>
         </table>
+
     </div>   
+</div>
             
-    <div class="tab-pane" id="forminput">
+    <div class="tab-pane" id="schoolyearinput">
         <h2>School Year Input</h2>
         <form class="form-horizontal" name="formEdit">
             <div class="control-group" ng-class="{error: formEdit.schoolyear.$invalid}">
@@ -49,8 +52,6 @@
         </form>
     </div>
 </div>
-</div>
-</div>
-</div>
+
 
 

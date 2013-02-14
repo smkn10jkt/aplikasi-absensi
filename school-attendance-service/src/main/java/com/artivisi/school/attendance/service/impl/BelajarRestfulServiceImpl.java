@@ -1,5 +1,6 @@
 package com.artivisi.school.attendance.service.impl;
 
+import com.artivisi.school.attendance.domain.Kehadiran;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,9 @@
-<!--<div class="span5 well-large">
+<div class="span5 well-large">
     <h1>SMS Notification</h1>
 
+    <a class="btn" ng-click="baru()">
+        <i class="icon-plus-sign"></i>Tambah Data
+    </a>
     <hr>
     <table class="table table-striped table-condensed table-bordered">
         <thead>
@@ -24,7 +27,7 @@
         </tbody>
     </table>
 
-</div>-->
+</div>
 
 <div class="span5 well-large">
     <h1>Form SMS</h1>
@@ -41,12 +44,17 @@
         
         <div class="control-group" ng-class="{error: formEdit.label.$invalid}">
             <label class="control-label" for="label">Messages : &nbsp;</label>
-            <textarea rows="3"></textarea>
+            <textarea id="label" 
+                   name="name" 
+                   placeholder="Your Messages" 
+                   ng-model="currentSms.name"
+                   required></textarea>
+            <span ng-show="formEdit.label.$error.required" class="help-inline">required</span>
         </div>
         
         <div class="form-actions">
-                <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Send</button>
-                <button type="button" class="btn" ng-click="baru()">Cancel</button>
+            <button type="submit" class="btn btn-primary" ng-click="simpan()" ng-disabled="isClean() || formEdit.$invalid">Send</button>
+            <button type="button" class="btn" ng-click="baru()">Cancel</button>
         </div>
     </form>
 </div>

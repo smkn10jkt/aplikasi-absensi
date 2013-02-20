@@ -1,5 +1,6 @@
 package com.artivisi.school.attendance.service.impl;
 
+import com.artivisi.school.attendance.domain.JenisPeserta;
 import com.artivisi.school.attendance.domain.Kehadiran;
 import com.artivisi.school.attendance.domain.Sms;
 import java.util.List;
@@ -11,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import com.artivisi.school.attendance.dao.ApplicationConfigDao;
+import com.artivisi.school.attendance.dao.JenisPesertaDao;
 import com.artivisi.school.attendance.dao.MenuDao;
 import com.artivisi.school.attendance.dao.PermissionDao;
 import com.artivisi.school.attendance.dao.RoleDao;
@@ -43,6 +45,8 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
     private UserDao userDao;
     @Autowired
     private SmsDao smsDao;
+    @Autowired
+    private JenisPesertaDao jenisPesertaDao;
 
     @Override
     public void save(ApplicationConfig ac) {
@@ -307,6 +311,34 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
     @Override
     public Long countAllSms() {
         return smsDao.count();
+    }
+
+    @Override
+    public void save(JenisPeserta jenis) {
+       jenisPesertaDao.save(jenis);
+    }
+
+    @Override
+    public void delete(JenisPeserta jenis) {
+        jenisPesertaDao.delete(jenis);
+    }
+
+    @Override
+    public JenisPeserta findJenisPesertaById(String id) {
+        if(!StringUtils.hasText(id)){
+            return null;
+        }
+        return jenisPesertaDao.findOne(id);
+    }
+
+    @Override
+    public Page<JenisPeserta> findAllJenisPesertas(Pageable pageable) {
+        return jenisPesertaDao.findAll(pageable);
+    }
+
+    @Override
+    public Long countAllJenisPeserta() {
+        return jenisPesertaDao.count();
     }
 
 }

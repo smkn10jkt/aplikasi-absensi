@@ -111,4 +111,5 @@ public class BelajarRestfulServiceImplTestIT {
         Long result = service.countApplicationConfigs("name");
         assertTrue(result == 1);
     }
+    
 }

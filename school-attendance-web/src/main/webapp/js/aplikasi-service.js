@@ -149,4 +149,31 @@ angular.module('belajar.service', ['ngResource'])
             
         return service;
     }])
+
+
+    .factory('SmsService', ['$resource', '$http', function($resource, $http){
+        var service = {
+            sms: $resource('notifications/sms/:id', {}, {
+                queryPage: {method:'GET', isArray: false}
+            }),
+            get: function(param, callback){ return this.sms.get(param, callback) }, 
+            query: function(){ return this.sms.query() },
+            save: function(obj){
+                if(obj.id == null){
+                    return $http.post('notifications/sms/', obj);
+                } else {
+                    return $http.put('notifications/sms/'+obj.id, obj);
+                }
+            }, 
+            remove: function(obj){
+                if(obj.id != null){
+                    return $http.delete('notifications/sms/'+obj.id);
+                }
+            }
+        };
+            
+        return service;
+    }])
+
+
 ;

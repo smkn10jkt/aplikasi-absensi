@@ -1,6 +1,7 @@
 package com.artivisi.school.attendance.service.impl;
 
 import com.artivisi.school.attendance.domain.Kehadiran;
+import com.artivisi.school.attendance.domain.Sms;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import com.artivisi.school.attendance.dao.ApplicationConfigDao;
 import com.artivisi.school.attendance.dao.MenuDao;
 import com.artivisi.school.attendance.dao.PermissionDao;
 import com.artivisi.school.attendance.dao.RoleDao;
+import com.artivisi.school.attendance.dao.SmsDao;
 import com.artivisi.school.attendance.dao.UserDao;
 import com.artivisi.school.attendance.domain.ApplicationConfig;
 import com.artivisi.school.attendance.domain.Menu;
@@ -39,6 +41,8 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
     private RoleDao roleDao;
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private SmsDao smsDao;
 
     @Override
     public void save(ApplicationConfig ac) {
@@ -274,6 +278,35 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
     @Override
     public Long countAllUsers() {
         return userDao.count();
+    }
+
+    @Override
+    public void save(Sms sms) {
+        smsDao.save(sms);
+    }
+
+    @Override
+    public void delete(Sms sms) {
+        smsDao.delete(sms);
+    }
+
+    @Override
+    public Sms findSmsById(String id) {
+        if(!StringUtils.hasText(id)){
+            return null;
+        }
+        return smsDao.findOne(id);
+    }
+
+
+    @Override
+    public Page<Sms> findAllSmss(Pageable pageable) {
+        return smsDao.findAll(pageable);
+    }
+
+    @Override
+    public Long countAllSms() {
+        return smsDao.count();
     }
 
 }

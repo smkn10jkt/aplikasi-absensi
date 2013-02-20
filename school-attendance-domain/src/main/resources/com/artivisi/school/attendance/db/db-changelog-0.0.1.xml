@@ -87,6 +87,18 @@
                 <constraints nullable="false" />
             </column>
         </createTable>
+        <createTable tableName="sms_keluar">
+            <column name="id" type="int(10)">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="no_tujuan" type="varchar(15)">
+                <constraints nullable="false" />
+            </column>
+            <column name="isi_sms" type="varchar(255)">
+            </column>
+            <column name="status_pengiriman" type="varchar(255)" />
+            <column name="tanggal_kirim" type="varchar(255)" />
+        </createTable>
         <modifySql dbms="mysql">
             <append value=" engine innodb" />
         </modifySql>
@@ -186,5 +198,12 @@
             <column header="active" type="BOOLEAN"/>
             <column header="id_role" type="STRING"/>
         </loadData>
+        <loadData tableName="sms_keluar" file="com/artivisi/school/attendance/db/data/sms.csv">
+            <column header="id" type="NUMERIC"/>
+            <column header="no_tujuan" type="STRING"/>
+            <column header="isi_sms" type="STRING"/>
+            <column header="status_pengiriman" type="STRING"/>
+            <column header="tanggal_kirim" type="STRING"/>
+        </loadData>       
     </changeSet>
 </databaseChangeLog>

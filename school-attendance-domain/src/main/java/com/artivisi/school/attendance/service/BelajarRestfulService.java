@@ -7,6 +7,7 @@ import com.artivisi.school.attendance.domain.Kehadiran;
 import com.artivisi.school.attendance.domain.Menu;
 import com.artivisi.school.attendance.domain.Permission;
 import com.artivisi.school.attendance.domain.Role;
+import com.artivisi.school.attendance.domain.Sms;
 import com.artivisi.school.attendance.domain.User;
 import java.util.List;
 import org.springframework.data.domain.Page;
@@ -54,4 +55,11 @@ public interface BelajarRestfulService extends MonitoredService {
     User findUserByUsername(String username);
     Page<User> findAllUsers(Pageable pageable);
     Long countAllUsers();
+    
+    //sms
+    void save(Sms sms);
+    void delete(Sms sms);
+    Sms findSmsById(String id);
+    Page<Sms> findAllSmss(Pageable pageable);
+    Long countAllSms();
 }

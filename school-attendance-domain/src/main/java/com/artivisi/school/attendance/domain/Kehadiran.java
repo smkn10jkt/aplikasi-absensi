@@ -29,36 +29,6 @@ public class Kehadiran {
     @Temporal(TemporalType.TIMESTAMP)
     private Date pulang;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Date getMasuk() {
-        return masuk;
-    }
-
-    public void setMasuk(Date masuk) {
-        this.masuk = masuk;
-    }
-
-    public Peserta getPeserta() {
-        return peserta;
-    }
-
-    public void setPeserta(Peserta peserta) {
-        this.peserta = peserta;
-    }
-
-    public Date getPulang() {
-        return pulang;
-    }
-
-    public void setPulang(Date pulang) {
-        this.pulang = pulang;
-    }
+    
     
 }

@@ -30,36 +30,5 @@ public class Peserta {
     @JoinColumn(name = "id_jenis_peserta", nullable = false)
     private JenisPeserta jenisPeserta;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public JenisPeserta getJenisPeserta() {
-        return jenisPeserta;
-    }
-
-    public void setJenisPeserta(JenisPeserta jenisPeserta) {
-        this.jenisPeserta = jenisPeserta;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public String getNomor() {
-        return nomor;
-    }
-
-    public void setNomor(String nomor) {
-        this.nomor = nomor;
-    }
     
 }

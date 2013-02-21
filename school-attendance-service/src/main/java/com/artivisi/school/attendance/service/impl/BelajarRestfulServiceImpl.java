@@ -14,14 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import com.artivisi.school.attendance.dao.ApplicationConfigDao;
-import com.artivisi.school.attendance.dao.JenisPesertaDao;
 import com.artivisi.school.attendance.dao.MenuDao;
 import com.artivisi.school.attendance.dao.PermissionDao;
 import com.artivisi.school.attendance.dao.RoleDao;
 import com.artivisi.school.attendance.dao.SmsDao;
 import com.artivisi.school.attendance.dao.UserDao;
-import com.artivisi.school.attendance.dao.JenisKetidakHadiranDao;
-import com.artivisi.school.attendance.dao.KetidakHadiranDao;
 import com.artivisi.school.attendance.domain.*;
 import com.artivisi.school.attendance.service.BelajarRestfulService;
 import java.util.ArrayList;
@@ -45,13 +42,7 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
     private UserDao userDao;
     @Autowired
     private SmsDao smsDao;
-    @Autowired
-    private JenisPesertaDao jenisPesertaDao;
-    @Autowired
-    private JenisKetidakHadiranDao jenisKetidakHadiranDao;
-    @Autowired
-    private KetidakHadiranDao ketidakHadiranDao;
-
+   
     @Override
     public void save(ApplicationConfig ac) {
         applicationConfigDao.save(ac);
@@ -317,89 +308,6 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
         return smsDao.count();
     }
 
-    @Override
-    public void save(JenisPeserta jenis) {
-       jenisPesertaDao.save(jenis);
-    }
-
-    @Override
-    public void delete(JenisPeserta jenis) {
-        jenisPesertaDao.delete(jenis);
-    }
-
-    @Override
-    public Page<JenisPeserta> findAllJenisPesertas(Pageable pageable) {
-        return jenisPesertaDao.findAll(pageable);
-    }
-
-    @Override
-    public Long countAllJenisPeserta() {
-        return jenisPesertaDao.count();
-    }
-
-    @Override
-    public void save(JenisKetidakhadiran ketidak) {
-        jenisKetidakHadiranDao.save(ketidak);
-    }
-
-    @Override
-    public void delete(JenisKetidakhadiran ketidak) {
-        jenisKetidakHadiranDao.delete(ketidak);
-    }
-
-    @Override
-    public JenisKetidakhadiran findJenisKetidakHadiranById(String id) {
-       if(!StringUtils.hasText(id)){
-            return null;
-        }
-        return jenisKetidakHadiranDao.findOne(id);
-    }
-
-    @Override
-    public Page<JenisKetidakhadiran> findAllJenisKetidakHadirans(Pageable pageable) {
-       return jenisKetidakHadiranDao.findAll(pageable);
-    }
-
-    @Override
-    public Long countAllJenisKetidakHadiran() {
-        return jenisKetidakHadiranDao.count() ;
-    }
-
-    @Override
-    public void save(Ketidakhadiran tidak) {
-         ketidakHadiranDao.save(tidak);
-    }
     
-    @Override
-    public void delete(Ketidakhadiran tidak) {
-      ketidakHadiranDao.delete(tidak);
-    }
-
-    @Override
-    public Ketidakhadiran findKetidakHadiranById(String id) {
-      if(!StringUtils.hasText(id)){
-            return null;
-        }
-        return ketidakHadiranDao.findOne(id);
-    }
-
-    @Override
-    public Page<Ketidakhadiran> findAllKetidakHadirans(Pageable pageable) {
-     return ketidakHadiranDao.findAll(pageable);
-    }
-
-    @Override
-    public Long counAllKetidakHadiran() {
-       return ketidakHadiranDao.count() ;
-    }
-
-    @Override
-    public JenisPeserta findJenisPesertaById(String id) {
-        if(!StringUtils.hasText(id)){
-            return null;
-        }
-        return jenisPesertaDao.findOne(id);
-    }
-
 }
 

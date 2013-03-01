@@ -76,6 +76,6 @@ public class JamKerja {
     public void setJenisPeserta(JenisPeserta jenisPeserta) {
         this.jenisPeserta = jenisPeserta;
     }
-    
+
 
 }

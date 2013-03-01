@@ -47,6 +47,4 @@ public class JenisPeserta {
     public void setNama(String nama) {
         this.nama = nama;
     }
-
-    
 }

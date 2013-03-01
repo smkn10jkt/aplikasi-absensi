@@ -426,42 +426,4 @@ angular.module('belajar.controller',['belajar.service'])
             return angular.equals($scope.original, $scope.currentSchool);
         }
     }])
-
-
-    .controller('SmsController', ['$scope', 'SmsService', function($scope, SmsService){
-        $scope.smss = SmsService.query();
-        $scope.edit = function(x){
-            if(x.id == null){
-                return; 
-            }
-            $scope.currentSms = SmsService.get({id: x.id}, function(data){
-                $scope.original = angular.copy(data);
-            });
-        };
-        $scope.baru = function(){
-            $scope.currentSms = null;
-            $scope.original = null;
-        }
-        $scope.simpan = function(){
-            if($scope.currentSms.active == null){
-                $scope.currentSms.active = false;
-            }
-            SmsService.save($scope.currentSms)
-            .success(function(){
-                $scope.smss = SmsService.query();
-                $scope.baru();
-            });
-        }
-        $scope.remove = function(x){
-            if(x.id == null){
-                return;
-            }
-            SmsService.remove(x).success(function(){
-                $scope.smss = SmsService.query();
-            });
-        }
-        $scope.isClean = function(){
-            return angular.equals($scope.original, $scope.currentSms);
-        }
-    }])
 ;

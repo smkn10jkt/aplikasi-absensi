@@ -61,5 +61,4 @@ public class Kehadiran {
         this.pulang = pulang;
     }
     
-    
 }

@@ -1,0 +1,54 @@
+<div class="row-fluid" >
+    <div class="span12 well-large">
+         <h1>Enroll User</h1>
+			<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+	<div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#">
+        <button class="btn btn-info"><i class="icon-list"></i>Syncronize</button>
+      </a>
+	</div>
+    <div id="" class="accordion-body collapse in">
+      <div class="accordion-inner">
+	  <div class="row">
+		<div align="right"><input type="text" placeholder="Search" /></div>
+	  </div>
+	  <table class="table table-striped table-condensed table-bordered">
+            <thead>
+                <tr>
+                    
+                    <th>ID FP</th >
+		            <th>NIS</th>
+                    <th>Name</th>
+					<th>Gender</th>
+					<th>Birthday</th>
+					<th>Grade</th>
+					<th>School Year</th>
+					<th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in schools.content">
+                    <td>{{x.enrolluser}}</td>
+		    <td>{{x.majors}}</td>
+                    <td>{{x.action}}</td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <select>
+		<option>     </option>
+		<option>Delete</option>
+		<option>Edit</option>
+		</select>
+		<input style="margin-top:-10px" type='button' class="btn btn-inverse btn-big" value='Apply'></input>
+      </div>
+    </div>
+</div>
+ 
+ 
+  </div>
+  </div>
+    </div>
+</div>
+

@@ -71,5 +71,4 @@ public class Ketidakhadiran {
         this.tanggal = tanggal;
     }
     
-    
 }

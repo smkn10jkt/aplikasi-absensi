@@ -3,6 +3,7 @@ package com.artivisi.school.attendance.service;
 import java.util.List;
 
 import com.artivisi.school.attendance.domain.ApplicationConfig;
+import com.artivisi.school.attendance.domain.JenisPeserta;
 import com.artivisi.school.attendance.domain.Kehadiran;
 import com.artivisi.school.attendance.domain.Menu;
 import com.artivisi.school.attendance.domain.Permission;
@@ -62,4 +63,11 @@ public interface BelajarRestfulService extends MonitoredService {
     Sms findSmsById(String id);
     Page<Sms> findAllSmss(Pageable pageable);
     Long countAllSms();
+    
+    // jenispeserta
+    void  save(JenisPeserta jenis);
+    void delete(JenisPeserta jenis);
+    JenisPeserta findJenisPesertaById(String id);
+    Page<JenisPeserta> findAllJenisPesertas(Pageable pageable);
+    Long countAllJenisPeserta();
 }

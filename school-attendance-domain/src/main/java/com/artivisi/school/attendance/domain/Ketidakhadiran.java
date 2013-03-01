@@ -30,4 +30,46 @@ public class Ketidakhadiran {
     private Date tanggal;
 
     private String keterangan;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public JenisKetidakhadiran getJenisKetidakhadiran() {
+        return jenisKetidakhadiran;
+    }
+
+    public void setJenisKetidakhadiran(JenisKetidakhadiran jenisKetidakhadiran) {
+        this.jenisKetidakhadiran = jenisKetidakhadiran;
+    }
+
+    public String getKeterangan() {
+        return keterangan;
+    }
+
+    public void setKeterangan(String keterangan) {
+        this.keterangan = keterangan;
+    }
+
+    public Peserta getPeserta() {
+        return peserta;
+    }
+
+    public void setPeserta(Peserta peserta) {
+        this.peserta = peserta;
+    }
+
+    public Date getTanggal() {
+        return tanggal;
+    }
+
+    public void setTanggal(Date tanggal) {
+        this.tanggal = tanggal;
+    }
+    
+    
 }

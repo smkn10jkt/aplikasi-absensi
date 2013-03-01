@@ -37,4 +37,45 @@ public class JamKerja {
     @Column(name = "hari_kerja", nullable = false)
     private BigInteger hariKerja;
 
+    public BigInteger getHariKerja() {
+        return hariKerja;
+    }
+
+    public void setHariKerja(BigInteger hariKerja) {
+        this.hariKerja = hariKerja;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Date getJamMasuk() {
+        return jamMasuk;
+    }
+
+    public void setJamMasuk(Date jamMasuk) {
+        this.jamMasuk = jamMasuk;
+    }
+
+    public Date getJamPulang() {
+        return jamPulang;
+    }
+
+    public void setJamPulang(Date jamPulang) {
+        this.jamPulang = jamPulang;
+    }
+
+    public JenisPeserta getJenisPeserta() {
+        return jenisPeserta;
+    }
+
+    public void setJenisPeserta(JenisPeserta jenisPeserta) {
+        this.jenisPeserta = jenisPeserta;
+    }
+    
+
 }

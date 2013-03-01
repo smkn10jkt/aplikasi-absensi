@@ -77,6 +77,8 @@ public class Sms {
     public void setTanggal_kirim(String tanggal_kirim) {
         this.tanggal_kirim = tanggal_kirim;
     }
+    
+    
 
     
 

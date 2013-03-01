@@ -88,4 +88,5 @@ public class Role {
     public void setMenuSet(Set<Menu> menuSet) {
         this.menuSet = menuSet;
     }
+    
 }

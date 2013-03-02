@@ -50,24 +50,26 @@ angular.module('belajar', ['ui', 'belajar.controller'])
         
         $httpProvider.responseInterceptors.push(sessionTimeoutInterceptor);
         $httpProvider.responseInterceptors.push('httpLoadingSpinner');
-        var spinnerFunction = function (data, headersGetter) {
-            $('#loading').show();
-            return data;
-        };
-        $httpProvider.defaults.transformRequest.push(spinnerFunction);
-    }])
+        var spinnerFunction = function (data, headersGetter) {
+            $('#loading').show();
+        return data;
+        };
+        
+    
+    $httpProvider.defaults.transformRequest.push(spinnerFunction);
+   }])
     .factory('httpLoadingSpinner', function ($q, $window) {
-        return function (promise) {
-            return promise.then(function (response) {
-                // do something on success
-                $('#loading').hide();
-                return response;
+    return function (promise) {
+        return promise.then(function (response) {
+            // do something on success
+        $('#loading').hide();
+        return response;
+    }, function (response) {
+        // do something on error
+        $('#loading').hide();
+        return $q.reject(response);
+        });
+};
+        })
 
-            }, function (response) {
-                // do something on error
-                $('#loading').hide();
-                return $q.reject(response);
-            });
-        };
-    })
 ;

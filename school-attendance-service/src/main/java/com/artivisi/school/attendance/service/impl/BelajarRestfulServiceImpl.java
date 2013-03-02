@@ -2,6 +2,8 @@ package com.artivisi.school.attendance.service.impl;
 
 import com.artivisi.school.attendance.domain.JenisPeserta;
 import com.artivisi.school.attendance.domain.Kehadiran;
+import com.artivisi.school.attendance.domain.JenisKetidakhadiran;
+import com.artivisi.school.attendance.domain.Ketidakhadiran;
 import com.artivisi.school.attendance.domain.Sms;
 import java.util.List;
 
@@ -18,11 +20,9 @@ import com.artivisi.school.attendance.dao.PermissionDao;
 import com.artivisi.school.attendance.dao.RoleDao;
 import com.artivisi.school.attendance.dao.SmsDao;
 import com.artivisi.school.attendance.dao.UserDao;
-import com.artivisi.school.attendance.domain.ApplicationConfig;
-import com.artivisi.school.attendance.domain.Menu;
-import com.artivisi.school.attendance.domain.Permission;
-import com.artivisi.school.attendance.domain.Role;
-import com.artivisi.school.attendance.domain.User;
+import com.artivisi.school.attendance.dao.JenisKetidakHadiranDao;
+import com.artivisi.school.attendance.dao.KetidakHadiranDao;
+import com.artivisi.school.attendance.domain.*;
 import com.artivisi.school.attendance.service.BelajarRestfulService;
 import java.util.ArrayList;
 import org.springframework.data.domain.Page;
@@ -33,7 +33,7 @@ import org.springframework.data.domain.Pageable;
 @Transactional
 public class BelajarRestfulServiceImpl implements BelajarRestfulService {
 
-	@Autowired
+    @Autowired
     private ApplicationConfigDao applicationConfigDao;
     @Autowired
     private MenuDao menuDao;
@@ -47,6 +47,10 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
     private SmsDao smsDao;
     @Autowired
     private JenisPesertaDao jenisPesertaDao;
+    @Autowired
+    private JenisKetidakHadiranDao jenisKetidakHadiranDao;
+    @Autowired
+    private KetidakHadiranDao ketidakHadiranDao;
 
     @Override
     public void save(ApplicationConfig ac) {
@@ -324,14 +328,6 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
     }
 
     @Override
-    public JenisPeserta findJenisPesertaById(String id) {
-        if(!StringUtils.hasText(id)){
-            return null;
-        }
-        return jenisPesertaDao.findOne(id);
-    }
-
-    @Override
     public Page<JenisPeserta> findAllJenisPesertas(Pageable pageable) {
         return jenisPesertaDao.findAll(pageable);
     }
@@ -341,4 +337,69 @@ public class BelajarRestfulServiceImpl implements BelajarRestfulService {
         return jenisPesertaDao.count();
     }
 
+    @Override
+    public void save(JenisKetidakhadiran ketidak) {
+        jenisKetidakHadiranDao.save(ketidak);
+    }
+
+    @Override
+    public void delete(JenisKetidakhadiran ketidak) {
+        jenisKetidakHadiranDao.delete(ketidak);
+    }
+
+    @Override
+    public JenisKetidakhadiran findJenisKetidakHadiranById(String id) {
+       if(!StringUtils.hasText(id)){
+            return null;
+        }
+        return jenisKetidakHadiranDao.findOne(id);
+    }
+
+    @Override
+    public Page<JenisKetidakhadiran> findAllJenisKetidakHadirans(Pageable pageable) {
+       return jenisKetidakHadiranDao.findAll(pageable);
+    }
+
+    @Override
+    public Long countAllJenisKetidakHadiran() {
+        return jenisKetidakHadiranDao.count() ;
+    }
+
+    @Override
+    public void save(Ketidakhadiran tidak) {
+         ketidakHadiranDao.save(tidak);
+    }
+    
+    @Override
+    public void delete(Ketidakhadiran tidak) {
+      ketidakHadiranDao.delete(tidak);
+    }
+
+    @Override
+    public Ketidakhadiran findKetidakHadiranById(String id) {
+      if(!StringUtils.hasText(id)){
+            return null;
+        }
+        return ketidakHadiranDao.findOne(id);
+    }
+
+    @Override
+    public Page<Ketidakhadiran> findAllKetidakHadirans(Pageable pageable) {
+     return ketidakHadiranDao.findAll(pageable);
+    }
+
+    @Override
+    public Long counAllKetidakHadiran() {
+       return ketidakHadiranDao.count() ;
+    }
+
+    @Override
+    public JenisPeserta findJenisPesertaById(String id) {
+        if(!StringUtils.hasText(id)){
+            return null;
+        }
+        return jenisPesertaDao.findOne(id);
+    }
+
 }
+

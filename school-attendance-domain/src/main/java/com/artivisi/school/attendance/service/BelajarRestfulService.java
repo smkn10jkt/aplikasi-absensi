@@ -3,8 +3,10 @@ package com.artivisi.school.attendance.service;
 import java.util.List;
 
 import com.artivisi.school.attendance.domain.ApplicationConfig;
+import com.artivisi.school.attendance.domain.JenisKetidakhadiran;
 import com.artivisi.school.attendance.domain.JenisPeserta;
 import com.artivisi.school.attendance.domain.Kehadiran;
+import com.artivisi.school.attendance.domain.Ketidakhadiran;
 import com.artivisi.school.attendance.domain.Menu;
 import com.artivisi.school.attendance.domain.Permission;
 import com.artivisi.school.attendance.domain.Role;
@@ -19,7 +21,7 @@ public interface BelajarRestfulService extends MonitoredService {
 	void save(ApplicationConfig ac);
 	void delete(ApplicationConfig ac);
 	ApplicationConfig findApplicationConfigById(String id);
-    Page<ApplicationConfig> findAllApplicationConfigs(Pageable pageable);
+        Page<ApplicationConfig> findAllApplicationConfigs(Pageable pageable);
 	Long countAllApplicationConfigs();
 	Long countApplicationConfigs(String search);
 	Page<ApplicationConfig> findApplicationConfigs(String search, Pageable pageable);
@@ -70,4 +72,18 @@ public interface BelajarRestfulService extends MonitoredService {
     JenisPeserta findJenisPesertaById(String id);
     Page<JenisPeserta> findAllJenisPesertas(Pageable pageable);
     Long countAllJenisPeserta();
+
+    //jenisketidakhadiran
+    void save(JenisKetidakhadiran ketidak);
+    void delete(JenisKetidakhadiran ketidak);
+    JenisKetidakhadiran findJenisKetidakHadiranById(String id);
+    Page<JenisKetidakhadiran> findAllJenisKetidakHadirans(Pageable pageable);
+    Long countAllJenisKetidakHadiran();
+    
+    //ketidakhadiran
+    void save(Ketidakhadiran tidak);
+    void delete(Ketidakhadiran tidak);
+    Ketidakhadiran findKetidakHadiranById(String id);
+    Page<Ketidakhadiran> findAllKetidakHadirans(Pageable pageable);
+    Long counAllKetidakHadiran();
 }
